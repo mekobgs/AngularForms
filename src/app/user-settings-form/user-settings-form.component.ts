@@ -1,3 +1,4 @@
+import { userSettings } from '../data/user-settings';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,6 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserSettingsFormComponent implements OnInit {
 
+  originalUserSettings: userSettings = {
+    name: 'Elmer',
+    emailOffers: true,
+    interfaceStyle: 'dark',
+    subscriptionType: 'Annual',
+    notes: 'here are some notes....'
+  }
+
+  ///Copying original data
+  userSettings: userSettings = { ...this.originalUserSettings  }
   constructor() { }
 
   ngOnInit() {
