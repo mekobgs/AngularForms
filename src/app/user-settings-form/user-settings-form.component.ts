@@ -1,3 +1,4 @@
+import { NgForm, NgModel } from '@angular/forms';
 import { userSettings } from '../data/user-settings';
 import { Component, OnInit } from '@angular/core';
 
@@ -23,4 +24,11 @@ export class UserSettingsFormComponent implements OnInit {
   ngOnInit() {
   }
 
+  onBlur(field: ngModel){
+    console.log("in onBlur: ", field.valid);
+  }
+
+  onSubmit(form: NgForm){
+    console.log("in onSubmit: ", form.valid);
+  }
 }
